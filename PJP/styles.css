@@ -1,0 +1,196 @@
+/* Reset básico para garantir consistência entre navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo geral do corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #fff;
+    background-color: #003366; /* Azul escuro para o fundo do site */
+}
+
+/* Estilo da faixa superior (menu) */
+header {
+    background-color: #002244; /* Azul marinho para a faixa do menu */
+    color: #fff;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Container dentro do cabeçalho para centralizar o conteúdo */
+header .container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estilo do título no cabeçalho */
+header h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+/* Botão hamburger */
+.menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+.menu-toggle .hamburger-icon {
+    width: 30px;
+    height: 3px;
+    background: #FFD700;
+    position: relative;
+    transition: background 0.3s;
+}
+
+.menu-toggle .hamburger-icon::before,
+.menu-toggle .hamburger-icon::after {
+    content: '';
+    width: 30px;
+    height: 3px;
+    background: #FFD700;
+    position: absolute;
+    left: 0;
+    transition: transform 0.3s;
+}
+
+.menu-toggle .hamburger-icon::before {
+    top: -8px;
+}
+
+.menu-toggle .hamburger-icon::after {
+    top: 8px;
+}
+
+/* Estilo do menu de navegação */
+nav {
+    display: flex;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #003366;
+    color: #fff;
+}
+
+/* Menu responsivo */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        width: 100%;
+        background-color: #002244;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        text-align: center;
+        margin: 0;
+    }
+
+    nav ul li a {
+        padding: 1rem;
+        border-bottom: 1px solid #003366;
+    }
+
+    nav ul li a:last-child {
+        border-bottom: none;
+    }
+
+    .menu-toggle .hamburger-icon {
+        background: #FFD700;
+    }
+
+    .menu-toggle .hamburger-icon::before {
+        transform: rotate(45deg);
+    }
+
+    .menu-toggle .hamburger-icon::after {
+        transform: rotate(-45deg);
+    }
+}
+
+/* Estilo do banner */
+#banner {
+    background: url('Leonardo_Phoenix_Crie_uma_imagem_para_o_Partido_da_Justia_e_Pr_3.jpg') no-repeat center center/cover; /* Imagem de fundo */
+    color: #fff;
+    padding: 5rem 1rem;
+    text-align: center;
+}
+
+#banner .banner-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#banner h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+#banner p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btn-primary {
+    background-color: #FFD700; /* Dourado para o fundo dos botões principais */
+    color: #003366; /* Azul escuro para o texto dos botões */
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.3s, color 0.3s;
+}
+
